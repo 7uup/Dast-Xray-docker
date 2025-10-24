@@ -1,7 +1,9 @@
 <img width="936" height="532" alt="image" src="https://github.com/user-attachments/assets/7ed5a700-76fe-436a-b20f-530b14b73631" />
 使用命令
 
-**docker-compose up -d**
+**git clone https://github.com/7uup/Dast-Xray-docker.git && cd Dast-Xray-docker
+docker-compose up -d**
+
 
 进行docker镜像构建
 
