@@ -1,0 +1,33 @@
+services:
+  mysql:
+    image: registry.linkease.net:5443/library/mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: zMeEkrYf7D
+      MYSQL_DATABASE: xray_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8087:8087"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+  frontend:
+    build: ./web
+    container_name: frontend
+    ports:
+      - "9528:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
