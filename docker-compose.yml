@@ -1,6 +1,6 @@
 services:
   mysql:
-    image: registry.linkease.net:5443/library/mysql:8.0
+    image: mysql:8.0
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: zMeEkrYf7D

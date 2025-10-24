@@ -1,4 +1,4 @@
-FROM registry.linkease.net:5443/library/nginx:alpine
+FROM nginx:alpine
 
 # 删除默认 html
 RUN rm -rf /usr/share/nginx/html/*
